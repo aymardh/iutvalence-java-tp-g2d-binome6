@@ -1,37 +1,24 @@
 package iutvalence.sylmard.memory;
 
 /**
+ * Game: a player and a grid.
+ *
  * @author aymardh sylvestr
- * Initialization of the game, with a player and a grid
+ * @version TODO
  */
 public class Game {
-	/**
-	 * this attribute is the player who play the game
-	 */
-	private final Player player;
-	/**
-	 * this attribute is the grid where the player will play
-	 */
-	private final Grid grid;
-	
-/**
- * Constructor of the game, we need his name and the level of the game
- * @param Pseudo
- * @param Niveau
- */
-    public Game(int Niveau) {
-    	
-    	Player myplayer = new Player();
+    /** Game's player. */
+    private final Player player;
+    /** Game's grid. */
+    private final Grid   grid;
 
+    /** Constructor of the game, we need his name and the level of the game. */
+    public Game(final String name, final int level) {
+        player = new Player(name);
+        /* TODO Grid init ? */
     }
 
-    /**
-     * this is the method in order to start the game
-     */
+    /** Start the game. */
     public void start() {
-
-
     }
-
- 
 }
