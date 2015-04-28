@@ -1,5 +1,8 @@
 package iutvalence.sylmard.memory;
 
+import java.util.Arrays;
+import java.util.Random;
+
 /**
  * Create and fill in the grid with values.
  *
@@ -7,23 +10,43 @@ package iutvalence.sylmard.memory;
  * @version TODO
  */
 public class Grid {
-    /** Constant used for the first level of difficulty, there are 4 * 4 box. */
-    public static final int SIZE_SIDE_LVL1 = 4;
-    /** Constant used for the second level of difficulty, there are 6 * 6 box. */
-    public static final int SIZE_SIDE_LVL2 = 6;
-    /** Constant used for the third level of difficulty, there are 8 * 8 box. */
-    public static final int SIZE_SIDE_LVL3 = 8;
-    /** Constant used for the forth level of difficulty, there are 10 * 10 box. */
-    public static final int SIZE_SIDE_LVL4 = 10;
-    /** Initialized with the first level . */
-    private final       int sizeSide       = SIZE_SIDE_LVL1;
     /** Grid. */
     private int[][] table;
 
     /** Create the grid. */
     public Grid(int level) {
-        /* TODO. */
+    	table = new int [level][level];
+    	/* TODO CODER. */
+    	int[] num = new int[level*level];
+    	Random rand = new Random();
+    	for (int i = 0 ; i< level*level/2;i++) {
+    		num[i] = i;
+    		num[i+level*level/2] = i;
+        }
+    	int iter = 0;
+    	for (int i = 0; i < level; i++) {
+    		for (int j = 0; j < level; j++) {
+    			int n = num[rand.nextInt(level*level-iter)];
+    			table[i][j] = n;
+    			// TODO Enlever le n du tableau initial et diminuer le tableau
+    			
+    		}	
+    	}
+    	System.out.println(Arrays.toString(num));
+    	
     }
+
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+	   	for (int i = 0; i < table[0].length; i++) {
+	   		sb.append(Arrays.toString(table[i])).append("\n");
+    	}  
+		return sb.toString();
+		
+	}
+    
+    
 }
     
 
