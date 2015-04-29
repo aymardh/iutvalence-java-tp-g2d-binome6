@@ -26,8 +26,15 @@ public class Grid {
     	int iter = 0;
     	for (int i = 0; i < level; i++) {
     		for (int j = 0; j < level; j++) {
-    			int n = num[rand.nextInt(level*level-iter)];
+    			int nbalea = rand.nextInt(level*level-iter);
+    			int n = num[nbalea];
     			table[i][j] = n;
+    			num[nbalea] = num[level*level-iter];
+    			iter++;
+    			
+    			
+    			
+    			
     			// TODO Enlever le n du tableau initial et diminuer le tableau
     			
     		}	
