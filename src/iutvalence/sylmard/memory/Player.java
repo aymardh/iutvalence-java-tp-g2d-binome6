@@ -7,12 +7,15 @@ package iutvalence.sylmard.memory;
  * @version TODO
  */
 public class Player {
+	
     /** Score is initialized to 0. */
     public static final int SCORE_DEFAULT = 0;
+    
     /** Player's nickname. */
     private final String nickname;
+    
     /** Player's score. */
-    private       int    score;
+    private int score;
 
     /** Create a player with the given <i>name</i>. */
     public Player(String name) {

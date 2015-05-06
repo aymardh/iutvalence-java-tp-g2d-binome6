@@ -10,47 +10,62 @@ import java.util.Random;
  * @version TODO
  */
 public class Grid {
+	
     /** Grid. */
     private int[][] table;
+    private int[][] hiddentable;
 
     /** Create the grid. */
     public Grid(int level) {
+    	
+    	/** Table is the grid that the player try to solve. */
     	table = new int [level][level];
-    	/* TODO CODER. */
-    	int[] num = new int[level*level];
+    	
+    	/** Num is the grid that contains the numbers used to filled the grid Table. */
+    	int elements = level*level;
+    	int[] num = new int[elements];
     	Random rand = new Random();
-    	for (int i = 0 ; i< level*level/2;i++) {
+    	
+    	/** Initialisation of the numbers in Num. */
+    	int distincts = elements/2;
+    	for (int i = 0; i < distincts; i++) {
     		num[i] = i;
-    		num[i+level*level/2] = i;
+    		num[i+distincts] = i;
         }
-    	int iter = 0;
+    	int iter = 1;
+    	
+    	/** We filled the grid Table with the numbers in Num. */
     	for (int i = 0; i < level; i++) {
     		for (int j = 0; j < level; j++) {
-    			int nbalea = rand.nextInt(level*level-iter);
+    			int nbalea = iter < elements ? rand.nextInt(elements-iter) : 0;
     			int n = num[nbalea];
     			table[i][j] = n;
-    			num[nbalea] = num[level*level-iter];
+    			
+    			num[nbalea] = num[elements-iter];
     			iter++;
-    			
-    			
-    			
-    			
-    			// TODO Enlever le n du tableau initial et diminuer le tableau
-    			
     		}	
     	}
-    	System.out.println(Arrays.toString(num));
+    	
+    	/** The hidden table that the player can see */
+    	hiddentable = new int [level][level];
+    	for (int i = 0; i < level; i++) {
+    		for (int j = 0; j < level; j++) {
+    			hiddentable[i][j] = -1;
+    			
+    		}
+    	}
+    	
     	
     }
 
 	@Override
 	public String toString() {
-		StringBuilder sb = new StringBuilder();
-	   	for (int i = 0; i < table[0].length; i++) {
-	   		sb.append(Arrays.toString(table[i])).append("\n");
-    	}  
-		return sb.toString();
 		
+		StringBuilder sh = new StringBuilder();
+	   	for (int i = 0; i < hiddentable[0].length; i++) {
+	   		sh.append(Arrays.toString(hiddentable[i])).append("\n");
+    	}
+		return sh.toString();
 	}
     
     

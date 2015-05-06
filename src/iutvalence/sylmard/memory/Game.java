@@ -7,8 +7,10 @@ package iutvalence.sylmard.memory;
  * @version 1.1
  */
 public class Game {
+	
     /** Game's player. */
     private final Player player;
+    
     /** Game's grid. */
     private final Grid grid;
 
@@ -17,6 +19,14 @@ public class Game {
         /* TODO Code the parameter's checking */
     	player = new Player(name);
         grid = new Grid(level);
+    }
+    
+    public void turnACard(int abs, int ord) {
+    	
+    	/* TODO Code the turn that show the card/number
+    	 * 
+    	 * hiddentable[abs][ord] = table[abs][ord]
+    	 */
     }
 
     /** Start the game. */

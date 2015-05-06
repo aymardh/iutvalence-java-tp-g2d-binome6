@@ -7,7 +7,5 @@ public class Memory {
 	public static void main(String[] args) {
 		Game game = new Game("Toto", 4);
 		game.start();
-		
 	}
-
 }
