@@ -12,14 +12,13 @@ import java.util.Random;
 public class Grid {
 	
     /** Grid. */
-    private int[][] table;
-    private int[][] hiddentable;
+    private Card[][] table;
 
     /** Create the grid. */
     public Grid(int level) {
     	
     	/** Table is the grid that the player try to solve. */
-    	table = new int [level][level];
+    	table = new Card[level][level];
     	
     	/** Num is the grid that contains the numbers used to filled the grid Table. */
     	int elements = level*level;
@@ -39,31 +38,26 @@ public class Grid {
     		for (int j = 0; j < level; j++) {
     			int nbalea = iter < elements ? rand.nextInt(elements-iter) : 0;
     			int n = num[nbalea];
-    			table[i][j] = n;
+    			table[i][j] = new Card(n);
     			
     			num[nbalea] = num[elements-iter];
     			iter++;
     		}	
-    	}
-    	
-    	/** The hidden table that the player can see */
-    	hiddentable = new int [level][level];
-    	for (int i = 0; i < level; i++) {
-    		for (int j = 0; j < level; j++) {
-    			hiddentable[i][j] = -1;
-    			
-    		}
-    	}
-    	
-    	
+    	}	
     }
 
+    public int swap(int i, int j) {
+    	
+    	table[i][j].swap();
+    	return 
+    }
+    
 	@Override
 	public String toString() {
 		
 		StringBuilder sh = new StringBuilder();
-	   	for (int i = 0; i < hiddentable[0].length; i++) {
-	   		sh.append(Arrays.toString(hiddentable[i])).append("\n");
+	   	for (int i = 0; i < table[0].length; i++) {
+	   		sh.append(Arrays.toString(table[i])).append("\n");
     	}
 		return sh.toString();
 	}

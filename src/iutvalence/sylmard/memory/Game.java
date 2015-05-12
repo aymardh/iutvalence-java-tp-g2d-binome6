@@ -20,18 +20,12 @@ public class Game {
     	player = new Player(name);
         grid = new Grid(level);
     }
-    
-    public void turnACard(int abs, int ord) {
-    	
-    	/* TODO Code the turn that show the card/number
-    	 * 
-    	 * hiddentable[abs][ord] = table[abs][ord]
-    	 */
-    }
 
     /** Start the game. */
     public void start() {
     	System.out.println(grid);
+    	grid.swap(i,j);
     }
+    
     
 }
