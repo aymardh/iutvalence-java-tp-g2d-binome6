@@ -24,7 +24,7 @@ public class Game {
     /** Start the game. */
     public void start() {
     	System.out.println(grid);
-    	grid.swap(i,j);
+    	grid.swap(2,2);
     }
     
     
