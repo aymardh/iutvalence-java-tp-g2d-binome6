@@ -7,7 +7,7 @@ import java.util.Random;
  * Create and fill in the grid with values.
  *
  * @author aymardh
- * @version TODO
+ * 
  */
 public class Grid {
 	
@@ -46,10 +46,21 @@ public class Grid {
     	}	
     }
 
+    /** swap the current card to hidden or not hidden */
     public int swap(int i, int j) {
-    	
-    	table[i][j].swap();
-    	return 
+    	return table[i][j].swap();
+    }
+    
+    /** Test every card, if one card is hidden, victory is false */
+    public boolean victory() {
+    	boolean victory = true;
+    	for (int i = 0; i < 4; i++) {
+        	for (int j = 0; j < 4; j++) {
+        			if (table[i][j].getHidden() == true)
+        				return victory = false;
+        		}
+    		}
+    	return victory;
     }
     
 	@Override
