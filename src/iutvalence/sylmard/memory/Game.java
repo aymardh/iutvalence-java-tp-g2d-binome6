@@ -2,6 +2,8 @@ package iutvalence.sylmard.memory;
 
 import java.util.Scanner;
 
+import javax.swing.text.html.HTMLDocument.HTMLReader.HiddenAction;
+
 /**
  * Game: a player and a grid.
  *
@@ -41,7 +43,7 @@ public class Game {
 						.println("Veuillez saisir les coordonnées de la carte à retourner :");
 				i = sc.nextInt();
 				j = sc.nextInt();
-				if (i > 3 || i < 0 || j < 0 || j > 3) {
+				if (i > 3|| i < 0 || j < 0 || j > 3) {
 					System.err
 							.println("Vous avez saisi de mauvaises coordonnées !");
 					good = false;
@@ -67,11 +69,21 @@ public class Game {
 			int val2 = grid.swap(x, y);
 			System.out.println(grid);
 			
+			if (val1 != val2)
+			{
+				try {
+					Thread.sleep(5000);
+				} catch (InterruptedException e) { /* NOTHING */ }
+				grid.swap(i, j);
+				grid.swap(x, y);
+				System.out.println(grid);
+				
+				
+			}
+
 			
 			// TODO val1 != val2 ??? -> Retourner les cartes à nouveaux.
-			try {
-				Thread.sleep(5000);
-			} catch (InterruptedException e) { /* NOTHING */ }
+
 			
 			// TODO metho
 			
