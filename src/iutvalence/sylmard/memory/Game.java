@@ -28,6 +28,7 @@ public class Game {
 	/** Start the game. */
 	public void start() {
 		System.out.println(grid);
+		
 	}
 
 	/** Play a game. */
@@ -39,11 +40,10 @@ public class Game {
 			boolean good;
 			do {
 				good = true;
-				System.out
-						.println("Veuillez saisir les coordonnées de la carte à retourner :");
+				System.out.println("Veuillez saisir les coordonnées de la carte à retourner :");
 				i = sc.nextInt();
 				j = sc.nextInt();
-				if (i > 3|| i < 0 || j < 0 || j > 3) {
+				if (i >(grid.getLevel()-1)|| i < 0 || j < 0 || j >(grid.getLevel()-1) ||grid.getHiddenCoord(i, j) == false) {
 					System.err
 							.println("Vous avez saisi de mauvaises coordonnées !");
 					good = false;
@@ -60,7 +60,7 @@ public class Game {
 				System.out.println("Veuillez saisir les coordonnées de la seconde carte à retourner :");
 				x = sc.nextInt();
 				y = sc.nextInt();
-				if (x > 3 || x < 0 || y > 3 || y < 0 || (x == i && y == j)) {
+				if (x > (grid.getLevel()-1)|| x < 0 || y >(grid.getLevel()-1)|| y < 0 || (x == i && y == j)|| grid.getHiddenCoord(x, y) == false) {
 					System.err.println("Vous avez saisi de mauvaises coordonnées !");
 					good = false;
 				}
@@ -68,7 +68,9 @@ public class Game {
 			System.out.println("Vous avez saisi les coordonnées : (" + x + "," + y + ")");
 			int val2 = grid.swap(x, y);
 			System.out.println(grid);
-			
+			/**
+			 * if we have 2 cards differents swap cards and create a delay 
+			 */
 			if (val1 != val2)
 			{
 				try {
@@ -80,9 +82,15 @@ public class Game {
 				
 				
 			}
+			/**
+			 * else return the value found
+			 */
+			else {
+				System.out.println("Vous avez trouvé les cartes : "+ val1);
+				System.out.println(grid);
+				
+			}
 
-			
-			// TODO val1 != val2 ??? -> Retourner les cartes à nouveaux.
 
 			
 			// TODO metho
@@ -93,6 +101,7 @@ public class Game {
 	/** Test the victory */
 	private boolean victory() {
 		return grid.victory();
+
 	}
 
 }

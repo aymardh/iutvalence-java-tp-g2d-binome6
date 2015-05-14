@@ -15,6 +15,8 @@ public class Grid {
     private Card[][] table;
 
     /** Create the grid. */
+    
+
     public Grid(int level) {
     	
     	/** Table is the grid that the player try to solve. */
@@ -46,6 +48,14 @@ public class Grid {
     	}	
     }
 
+    
+    public int getLevel(){
+    	int lvl = 0;
+    	lvl = table.length;
+    	return lvl;
+        }
+    	
+
     /** swap the current card to hidden or not hidden */
     public int swap(int i, int j) {
     	return table[i][j].swap();
@@ -54,14 +64,18 @@ public class Grid {
     /** Test every card, if one card is hidden, victory is false */
     public boolean victory() {
     	boolean victory = true;
-    	for (int i = 0; i < 4; i++) {
-        	for (int j = 0; j < 4; j++) {
+    	for (int i = 0; i < getLevel(); i++) {
+        	for (int j = 0; j < getLevel(); j++) {
         			if (table[i][j].getHidden() == true)
         				return victory = false;
         		}
     		}
     	return victory;
     }
+    
+    public boolean getHiddenCoord(int i, int j){
+	return table[i][j].getHidden();
+	}
 
     
     
@@ -73,7 +87,12 @@ public class Grid {
 	   		sh.append(Arrays.toString(table[i])).append("\n");
     	}
 		return sh.toString();
+		
+
 	}
+	
+
+	
   
     
 }

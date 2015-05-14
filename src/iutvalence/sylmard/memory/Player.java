@@ -1,5 +1,7 @@
 package iutvalence.sylmard.memory;
 
+import java.util.Scanner;
+
 /**
  * A player with his nickname and his score.
  *
@@ -22,4 +24,6 @@ public class Player {
         this.nickname = name;
         this.score = SCORE_DEFAULT;
     }
+
+    
 }
