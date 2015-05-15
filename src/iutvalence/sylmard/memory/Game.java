@@ -10,13 +10,20 @@ import javax.swing.text.html.HTMLDocument.HTMLReader.HiddenAction;
  * @author aymardh sylvestr
  * @version 1.1
  */
+
 public class Game {
 
 	/** Game's player. */
 	private final Player player;
 
 	/** Game's grid. */
-	private final Grid grid;
+	private Grid grid;
+	
+	/**
+	 * count the number of turn
+	 */
+	public int counter = 0;
+
 
 	/** Constructor of the game, we need his name and the level of the game. */
 	public Game(final String name, final int level) {
@@ -90,9 +97,16 @@ public class Game {
 				System.out.println(grid);
 				
 			}
+			/**
+			 * add 1 turn
+			 */
+			counter++;
+			
+
+
 			if (grid.victory() == true)
 			{
-				System.out.println("victory !");
+				System.out.println("victory !"+counter);
 			}
 
 
@@ -100,6 +114,7 @@ public class Game {
 			// TODO metho
 			
 		}
+
 	}
 	
 	/** Test the victory */
