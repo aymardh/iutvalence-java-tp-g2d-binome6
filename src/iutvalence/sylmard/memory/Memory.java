@@ -20,7 +20,7 @@ public class Memory {
 			int level = sk.nextInt();
 			System.out.println("Vous avez saisi le niveau "+ level);
 			
-
+		
 		Game game = new Game("pseudo", level);
 
 		game.start();

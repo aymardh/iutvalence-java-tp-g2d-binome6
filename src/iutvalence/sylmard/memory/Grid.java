@@ -71,6 +71,7 @@ public class Grid {
         		}
     		}
     	return victory;
+    	
     }
     
     public boolean getHiddenCoord(int i, int j){
