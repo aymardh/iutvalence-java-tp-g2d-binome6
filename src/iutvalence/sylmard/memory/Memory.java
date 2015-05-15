@@ -11,13 +11,35 @@ public class Memory {
 	/** the main code where we start and play */
 	public static void main(String[] args) {
 
-
+			/** 
+			 * need a pseudo
+			 */
 	    	Scanner sk = new Scanner(System.in);
 			System.out.println("Veuillez saisir vôtre pseudo:");
 			String pseudo = sk.nextLine();
 			System.out.println("Bonjour " + pseudo);
-			System.out.println("Veuillez saisir un niveau dont la valeur au carré est paire");
-			int level = sk.nextInt();
+			
+			/**
+			 * need a level
+			 */
+			
+			boolean good;
+			int level;
+			
+			do
+			{
+				good=true;
+			
+			System.out.println("Veuillez saisir un niveau positif dont la valeur au carré est paire");
+			level = sk.nextInt();
+			if ( level % 2 !=0 || level<=0 )
+				{
+					good=false;
+					
+				}
+			}
+			while(!good);
+				
 			System.out.println("Vous avez saisi le niveau "+ level);
 			
 		
