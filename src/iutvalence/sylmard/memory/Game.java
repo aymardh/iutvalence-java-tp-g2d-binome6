@@ -25,6 +25,8 @@ public class Game {
 	public int counter = Player.SCORE_DEFAULT;
 	public int score = Player.SCORE_DEFAULT;
 
+	private Scanner sc;
+
 
 	/** Constructor of the game, we need his name and the level of the game. */
 	public Game(final String name, final int level) {
@@ -41,7 +43,7 @@ public class Game {
 
 	/** Play a game. */
 	public void play() {
-		Scanner sc = new Scanner(System.in);
+		sc = new Scanner(System.in);
 
 		while (!victory()) {
 			int i, j;
@@ -104,16 +106,14 @@ public class Game {
 			counter++;
 
 			
-
+			/**
+			 * message for victory
+			 */
 
 			if (grid.victory() == true)
 			{
 				System.out.println("victory !");
 			}
-
-
-			
-			// TODO metho
 			
 		}
 
@@ -124,6 +124,9 @@ public class Game {
 		return grid.victory();
 
 	}
+	/**
+	 * the score 
+	 */
 	public int score()
 	{
 		score=(grid.getLevel()*500)-(counter*75);

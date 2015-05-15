@@ -48,7 +48,9 @@ public class Grid {
     	}	
     }
 
-    
+    /**
+     * get the level 
+     */
     public int getLevel(){
     	int lvl = 0;
     	lvl = table.length;
@@ -73,7 +75,12 @@ public class Grid {
     	return victory;
     	
     }
-    
+    /**
+     * get if the card is hidden
+     * @param i
+     * @param j
+     * @return
+     */
     public boolean getHiddenCoord(int i, int j){
 	return table[i][j].getHidden();
 	}
