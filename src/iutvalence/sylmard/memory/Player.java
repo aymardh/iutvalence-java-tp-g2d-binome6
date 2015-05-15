@@ -1,6 +1,6 @@
 package iutvalence.sylmard.memory;
 
-import java.util.Scanner;
+
 
 /**
  * A player with his nickname and his score.
