@@ -90,6 +90,10 @@ public class Game {
 				System.out.println(grid);
 				
 			}
+			if (grid.victory() == true)
+			{
+				System.out.println("victory !");
+			}
 
 
 			
