@@ -20,7 +20,7 @@ public class Memory {
 			System.out.println("Bonjour " + pseudo);
 			
 			/**
-			 * need a level
+			 * need a level => 0 and level*level =pair
 			 */
 			
 			boolean good;
@@ -46,7 +46,9 @@ public class Memory {
 		Game game = new Game("pseudo", level);
 
 		game.start();
-		game.play();		
+		game.play();
+		System.out.println("votre score est de : " + game.score());
+		
 	}
 
 	

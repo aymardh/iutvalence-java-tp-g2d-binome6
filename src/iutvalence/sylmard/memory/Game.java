@@ -22,7 +22,8 @@ public class Game {
 	/**
 	 * count the number of turn
 	 */
-	public int counter = 0;
+	public int counter = Player.SCORE_DEFAULT;
+	public int score = Player.SCORE_DEFAULT;
 
 
 	/** Constructor of the game, we need his name and the level of the game. */
@@ -101,12 +102,13 @@ public class Game {
 			 * add 1 turn
 			 */
 			counter++;
+
 			
 
 
 			if (grid.victory() == true)
 			{
-				System.out.println("victory !"+counter);
+				System.out.println("victory !");
 			}
 
 
@@ -121,6 +123,11 @@ public class Game {
 	private boolean victory() {
 		return grid.victory();
 
+	}
+	public int score()
+	{
+		score=(grid.getLevel()*500)-(counter*75);
+		return score;
 	}
 
 }
