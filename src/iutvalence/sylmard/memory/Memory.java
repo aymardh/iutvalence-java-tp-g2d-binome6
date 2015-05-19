@@ -5,7 +5,7 @@ import java.util.Scanner;
 /** The class where we execute the game */
 public class Memory {
 
-	private static Scanner sk;
+	
 
 
 	private Memory() { }
@@ -13,12 +13,12 @@ public class Memory {
 	
 	/** the main code where we start and play */
 	public static void main(String[] args) {
-
-			sk = new Scanner(System.in);
-			System.out.println("Veuillez saisir vôtre pseudo:");
-			String pseudo = sk.nextLine();
-			System.out.println("Bonjour " + pseudo);
-			
+		
+		
+		Scanner sk = new Scanner(System.in);
+		System.out.println("Veuillez saisir vôtre pseudo:");
+		String pseudo = sk.nextLine();
+		System.out.println("Bonjour " + pseudo);
 			/**
 			 * need a level => 0 and level*level =pair
 			 */
@@ -41,13 +41,13 @@ public class Memory {
 			while(!good);
 				
 			System.out.println("Vous avez saisi le niveau "+ level);
-			
-		
-		Game game = new Game("pseudo", level);
 
+		
+		Game game = new Game(pseudo,level );
+		
 		game.start();
 		game.play();
-		System.out.println("votre score est de : " + game.score());
+		System.out.println("votre score est de : " + game.score);
 		
 	}
 
