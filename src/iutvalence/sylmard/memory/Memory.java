@@ -4,17 +4,14 @@ import java.util.Scanner;
 
 /** The class where we execute the game */
 public class Memory {
-
 	
-
-
 	private Memory() { }
 
-	
 	/** the main code where we start and play */
 	public static void main(String[] args) {
-		
-		
+
+		ParamWindow param = new ParamWindow();
+		MemoryWindow memo = new MemoryWindow();
 		Scanner sk = new Scanner(System.in);
 		System.out.println("Veuillez saisir vôtre pseudo:");
 		String pseudo = sk.nextLine();
@@ -42,7 +39,6 @@ public class Memory {
 				
 			System.out.println("Vous avez saisi le niveau "+ level);
 
-		
 		Game game = new Game(pseudo,level );
 		
 		game.start();
