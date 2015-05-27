@@ -18,7 +18,7 @@ public class Controller extends Thread {
 		/* Modèle. */
 		grid = new Grid(Integer.valueOf(level));
 		player = new Player(pseudo);
-		SwingUtilities.invokeLater(new MemoryWindow(this));
+		SwingUtilities.invokeLater(new MemoryWindow(this, Integer.valueOf(level)));
 	}
 
 	

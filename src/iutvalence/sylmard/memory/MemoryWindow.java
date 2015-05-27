@@ -9,9 +9,11 @@ import javax.swing.JFrame;
 public class MemoryWindow extends Thread {
 	
 	private Controller controller;
+	private int level;
 	
-	public MemoryWindow(Controller controller) {
+	public MemoryWindow(Controller controller, int level) {
 		this.controller = controller;
+		this.level = level;
 	}
 		
 	@Override
@@ -30,16 +32,15 @@ public class MemoryWindow extends Thread {
 	    //Termine le processus lorsqu'on clique sur la croix rouge
 	    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    
-	    //Rend visible        
-	    frame.setVisible(true);
-	    
-	    frame.setLayout(new GridLayout(4, 4));
+	    frame.setLayout(new GridLayout(level, level));
 	    //On ajoute le bouton au content pane de la JFrame
-	    //int lev = (level * level) + 1;
-	    for (int i=1; i < 17; i++){
-	    	frame.getContentPane().add(new JButton());
+	    for (int i=0; i < level; i++){
+	    	for(int j=0; j < level; j++){
+	    		frame.getContentPane().add(new Button(i, j));
+	    	}
 	    }
-	    	
+	    
+	    //Rend visible        
 	    frame.setVisible(true);
 	    
 	    //paneljeu.add(, BorderLayout.PAGE_START);
