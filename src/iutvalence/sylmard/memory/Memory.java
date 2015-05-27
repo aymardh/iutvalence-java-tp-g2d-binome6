@@ -9,9 +9,8 @@ public class Memory {
 
 	/** the main code where we start and play */
 	public static void main(String[] args) {
-
-		ParamWindow param = new ParamWindow();
-		MemoryWindow memo = new MemoryWindow();
+		new Controller().start();
+		
 		Scanner sk = new Scanner(System.in);
 		System.out.println("Veuillez saisir vôtre pseudo:");
 		String pseudo = sk.nextLine();
