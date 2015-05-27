@@ -12,4 +12,5 @@ import javax.swing.JTextField;
 
 public class ScoreWindow extends JFrame{
 
+	
 }

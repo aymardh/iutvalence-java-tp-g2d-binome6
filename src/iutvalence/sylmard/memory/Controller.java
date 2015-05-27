@@ -4,7 +4,7 @@ import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 
 public class Controller extends Thread {
-	// Lien controller => Vue
+	// Lien controller => Vue 
 	private MemoryWindow view;
 	// Lien controller => Modele
 	private Grid grid;
