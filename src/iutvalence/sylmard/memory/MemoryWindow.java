@@ -1,12 +1,14 @@
 package iutvalence.sylmard.memory;
 
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
 
-public class MemoryWindow extends Thread {
+public class MemoryWindow extends Thread implements ActionListener{
 	
 	private Controller controller;
 	private int level;
@@ -48,7 +50,12 @@ public class MemoryWindow extends Thread {
 	    //frame.setContentPane(new Panel());
 	}
 	
-	
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		Object source = e.getSource();
+		
+		System.out.println(controller.turnCard(((Button)source)));
+	}
 	
 	
 

@@ -38,7 +38,7 @@ public class Memory {
 				
 			System.out.println("Vous avez saisi le niveau "+ level);
 
-		Game game = new Game(pseudo,level );
+		Game game = new Game(pseudo,level);
 		
 		game.start();
 		game.play();

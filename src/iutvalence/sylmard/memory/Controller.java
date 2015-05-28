@@ -20,6 +20,13 @@ public class Controller extends Thread {
 		player = new Player(pseudo);
 		SwingUtilities.invokeLater(new MemoryWindow(this, Integer.valueOf(level)));
 	}
+	
+	public int turnCard(Button b){
+		int i = b.i;
+		int j = b.j;
+		return grid.getNum(i, j);
+		
+	}
 
 	
 }

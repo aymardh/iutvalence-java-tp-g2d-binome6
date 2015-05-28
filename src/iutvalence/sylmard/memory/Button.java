@@ -4,9 +4,10 @@ import javax.swing.JButton;
 
 public class Button extends JButton{
 	
-	public int i;
-	public int j;
+	public final int i;
+	public final int j;
 	public boolean hidde;
+	public int number;
 	
 	public Button(int i, int j){
 		
@@ -15,6 +16,8 @@ public class Button extends JButton{
 		this.hidde = true;
 	}
 
-	
+	public int getNumber(){
+		return this.number;
+	}
 	
 }

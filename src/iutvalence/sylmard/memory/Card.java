@@ -1,6 +1,4 @@
-/**
- * 
- */
+
 package iutvalence.sylmard.memory;
 
 /**
@@ -11,7 +9,7 @@ package iutvalence.sylmard.memory;
 /** The class Card, a Card is a random number and a the card is hidden or not */
 public class Card {
 	/** the random number */
-	private int num;
+	public int num;
 	/** hidden or not */
 	private boolean hidden;
 	

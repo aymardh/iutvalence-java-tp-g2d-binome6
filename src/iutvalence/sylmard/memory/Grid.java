@@ -57,6 +57,10 @@ public class Grid {
     	return lvl;
         }
     	
+    public int getNum(int i, int j){
+    	
+    	return table[i][j].num;
+    }
 
     /** swap the current card to hidden or not hidden */
     public int swap(int i, int j) {
